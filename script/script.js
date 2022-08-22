@@ -124,7 +124,6 @@ function comprarButtonClicked(event) {
   shoppingCartItemsContainer.innerHTML = '';
   updateShoppingCartTotal();
 
-if(comprarButtonClicked == true) {
 Toastify({
   text: "Compra realizada correctamente",
   duration: 3000,
@@ -137,10 +136,9 @@ Toastify({
   },
   onClick: function(){} // Callback after click
 }).showToast();
-  }
 }
 
-//API emailJS
+//API emailJS START
 const btn = document.getElementById('button');
 
 document.getElementById('formId')
@@ -174,3 +172,4 @@ document.getElementById('formId')
         btn.value = 'Send Email';
     });
 });
+//API emailJS END
