@@ -139,3 +139,38 @@ Toastify({
 }).showToast();
   }
 }
+
+//API emailJS
+const btn = document.getElementById('button');
+
+document.getElementById('formId')
+.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    btn.value = 'Enviando...';
+
+    const serviceID = 'service_vb385df';
+    const templateID = 'template_9pjt3pn';
+
+    emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+        btn.value = 'Send Email';
+
+            //libreria toastify
+        Toastify({
+            text: "Email enviado correctamente",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "linear-gradient(to top left, #253D30, #059439)",
+            },
+            onClick: function(){} // Callback after click
+        }).showToast();
+
+    }, (err) => {
+        btn.value = 'Send Email';
+    });
+});
