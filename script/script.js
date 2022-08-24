@@ -154,7 +154,7 @@ document.getElementById('formId')
     .then(() => {
         btn.value = 'Send Email';
 
-            //libreria toastify
+        //libreria toastify
         Toastify({
             text: "Email enviado correctamente",
             duration: 3000,
